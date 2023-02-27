@@ -36,11 +36,8 @@ const Appointment = (props) => {
       .then(() => transition(SHOW))
       .catch(error => transition(ERROR_SAVE, true));
   }
-  function cancel(name, interviewer) {
-    const interview = {
-      student: name,
-      interviewer,
-    };
+  function cancel() {
+   
     transition(DELETING);
     props.cancelInterview(props.id)
       .then(() => {
