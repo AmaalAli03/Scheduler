@@ -7,7 +7,7 @@ import Status from './Status';
 import Confirm from './Confirm';
 import Error from './Error';
 import "./styles.scss";
-import useVisualMode from "hooks/useVisualMode";
+import useVisualMode from 'components/hooks/useVisualMode';
 
 
 const Appointment = (props) => {
@@ -50,7 +50,7 @@ const Appointment = (props) => {
 
 
   return (
-    <article className="appointment">
+    <article className="appointment" data-testid="appointment">
       <Header time={props.time} />
       {mode === EMPTY && <Empty onAdd={() => transition(CREATE)} />}
       {mode === SHOW && (
@@ -59,6 +59,7 @@ const Appointment = (props) => {
           interviewer={props.interview.interviewer}
           onDelete={() => transition(CONFIRMING)}
           onEdit={() => transition(EDITING)}
+          
         />
       )}
       {mode === CREATE && (
