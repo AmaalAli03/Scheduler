@@ -71,7 +71,7 @@ const Appointment = (props) => {
 
         />
       )}
-      {mode === SAVING && <Status message="Saving..." />}
+      {mode === SAVING && <Status message="Saving" />}
       {mode === DELETING && <Status message="Deleting..." />}
       {mode === CONFIRMING &&
         <Confirm
