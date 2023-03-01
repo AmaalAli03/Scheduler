@@ -1,7 +1,5 @@
- function getAppointmentsForDay(state, day) {
- 
+function getAppointmentsForDay(state, day) {
   const dayofFoundDay = state.days.find((dy) => dy.name === day);
- 
   if (!dayofFoundDay) {
     return [];
   }
@@ -11,27 +9,27 @@
   });
   return appointments;
 }
-function getInterview(state, interview) {
-  if(!interview) {
-    return null;
-  }  
-const id = interview.interviewer;
- const interviewObj =  {
-"student":interview.student,
-"interviewer":{
-   id: id,
-   name: state.interviewers[id].name,
-   avatar: state.interviewers[id].avatar
-}
- };
-return interviewObj
-}
 
+function getInterview(state, interview) {
+  if (!interview) {
+    return null;
+  }
+  const id = interview.interviewer;
+  const interviewObj = {
+    "student": interview.student,
+    "interviewer": {
+      id: id,
+      name: state.interviewers[id].name,
+      avatar: state.interviewers[id].avatar
+    }
+  };
+  return interviewObj;
+}
 
 function getInterviewersForDay(state, day) {
- 
+
   const dayofFoundDay = state.days.find((dy) => dy.name === day);
- 
+
   if (!dayofFoundDay) {
     return [];
   }
@@ -43,5 +41,4 @@ function getInterviewersForDay(state, day) {
 }
 
 
-
-export {getAppointmentsForDay, getInterview, getInterviewersForDay}
+export { getAppointmentsForDay, getInterview, getInterviewersForDay };

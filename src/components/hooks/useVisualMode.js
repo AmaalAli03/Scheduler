@@ -1,6 +1,5 @@
 import { useState } from 'react';
 
-
 export default function useVisualMode(initial) {
   const [mode, setMode] = useState(initial);
   const [history, setHistory] = useState([initial]);
@@ -10,15 +9,12 @@ export default function useVisualMode(initial) {
 
     setHistory(prev => {
       // we could do this with a ternary operator in one line
-    
       let newHistory = [...prev];
       if (replace) {
         newHistory.pop();
-        
       }
 
       return [...newHistory, newMode];
-    
 
     });
   };

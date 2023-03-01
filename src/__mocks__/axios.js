@@ -1,5 +1,3 @@
-
-
 const fixtures = {
   days: [
     {
@@ -54,6 +52,7 @@ const fixtures = {
     }
   }
 };
+
 export default {
   defaults: { baseURL: "" },
   put: jest.fn(url => {

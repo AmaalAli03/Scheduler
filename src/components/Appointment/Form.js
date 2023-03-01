@@ -1,4 +1,3 @@
-
 import Button from 'components/Button';
 import InterviewerList from 'components/InterviewerList';
 import "./styles.scss";

@@ -1,19 +1,14 @@
-
-
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-export default function useApplicationData(props){
-
+export default function useApplicationData(props) {
   const setDay = day => setState({ ...state, day });
-
   const [state, setState] = useState({
     day: "Monday",
     days: [],
     appointments: {},
     interviewers: {}
   });
-
 
   useEffect(() => {
     Promise.all([
@@ -25,12 +20,8 @@ export default function useApplicationData(props){
       const appointments = all[1].data;
       const interviewers = all[2].data;
       setState((prev) => ({ ...prev, days, appointments, interviewers }));
-
-
     });
   }, []);
-
-
 
   const updateSpots = (day, days, appointments) => {
     const currentDay = days.find((randomDay) => randomDay.name === day);
@@ -58,8 +49,6 @@ export default function useApplicationData(props){
         updateSpots(state.day, state.days, appointments);
         setState({ ...state, appointments });
       });
-
-
   }
 
   function cancelInterview(id) {
@@ -74,13 +63,11 @@ export default function useApplicationData(props){
 
     return axios.delete(`/api/appointments/${id}`)
       .then((response) => {
-        // setState({ ...state, appointments });
         state.appointments[id].interview = null;
         updateSpots(state.day, state.days, state.appointments);
         setState({ ...state, appointments: state.appointments, days: state.days });
       });
 
-
   }
-return {state, setDay, bookInterview, cancelInterview, updateSpots}
+  return { state, setDay, bookInterview, cancelInterview, updateSpots };
 };

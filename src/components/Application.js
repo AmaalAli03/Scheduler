@@ -6,8 +6,6 @@ import { getAppointmentsForDay, getInterview, getInterviewersForDay } from "help
 import useApplicationData from "./hooks/useApplicationData";
 
 
-
-
 export default function Application(props) {
   const {
     state,
@@ -15,12 +13,9 @@ export default function Application(props) {
     bookInterview,
     cancelInterview
   } = useApplicationData();
-  
-    const dailyAppointments = getAppointmentsForDay(state, state.day);
-    const interviewers = getInterviewersForDay(state, state.day);
- 
 
-
+  const dailyAppointments = getAppointmentsForDay(state, state.day);
+  const interviewers = getInterviewersForDay(state, state.day);
 
   return (
     <main className="layout">
@@ -33,11 +28,9 @@ export default function Application(props) {
         <hr className="sidebar__separator sidebar--centered" />
         <nav className="sidebar__menu">
           <DayList
-
             days={state.days}
             value={state.day}
             onChange={setDay}
-
           />
         </nav>
         <img
@@ -56,7 +49,6 @@ export default function Application(props) {
             interviewers={interviewers}
             bookInterview={bookInterview}
             cancelInterview={cancelInterview}
-          
           />;
         })}
         <Appointment key="last" time="5pm" />

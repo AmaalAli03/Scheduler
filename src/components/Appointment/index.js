@@ -37,7 +37,7 @@ const Appointment = (props) => {
       .catch(error => transition(ERROR_SAVE, true));
   }
   function cancel() {
-   
+
     transition(DELETING);
     props.cancelInterview(props.id)
       .then(() => {
@@ -59,7 +59,7 @@ const Appointment = (props) => {
           interviewer={props.interview.interviewer}
           onDelete={() => transition(CONFIRMING)}
           onEdit={() => transition(EDITING)}
-          
+
         />
       )}
       {mode === CREATE && (
