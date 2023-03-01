@@ -31,20 +31,7 @@ export default function useApplicationData(props){
   }, []);
 
 
-  // function updateSpots(appointmentId) {
-  //   // first we need to find the right day with appointment id
-  //   // use find() 
-  //   // use console.log
-  //   // we find the right day we want to build a new day with the updated spots like {...interview}(includes???)
-  //   //  using this we want to build the new days array, 
-  //   // we then want to update the state
-  //   const result = state.days.find(({appointment}) => appointment[appointmentId]);
-  //   console.log(result);
-    
-  //   setState()
 
-
-  // }
   const updateSpots = (day, days, appointments) => {
     const currentDay = days.find((randomDay) => randomDay.name === day);
     const currentAppointments = currentDay.appointments;
