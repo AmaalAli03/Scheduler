@@ -72,10 +72,10 @@ const Appointment = (props) => {
         />
       )}
       {mode === SAVING && <Status message="Saving" />}
-      {mode === DELETING && <Status message="Deleting..." />}
+      {mode === DELETING && <Status message="Deleting" />}
       {mode === CONFIRMING &&
         <Confirm
-          message="Are you sure you want to Delete...?"
+          message="Are you sure you would like to delete?"
           onCancel={back}
           onConfirm={cancel}
         />}
@@ -89,12 +89,12 @@ const Appointment = (props) => {
         />}
       {mode === ERROR_DELETE &&
         <Error
-          message="Could not cancel appointment..."
+          message="Could not cancel appointment"
           onClose={back}
         />}
       {mode === ERROR_SAVE &&
         <Error
-          message="Could not save appointment..."
+          message="Could not save appointment"
           onClose={back}
         />}
     </article>
