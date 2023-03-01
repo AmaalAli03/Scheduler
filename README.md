@@ -5,25 +5,29 @@ Using the latest tools and techniques we learned, we built and tested a React ap
 ## Final Product
 
 ### Deleting an appointment.
-!["Screenshot of Delete: How to delete an appointment"]()
+!["Screenshot of Delete: How to delete an appointment"](https://github.com/AmaalAli03/schedular/blob/master/Docs/SchedulerDelete.gif?raw=true)
 ### Saving an appointment.
-
+!["Screenshot of Save: How to save an appointment"](https://github.com/AmaalAli03/schedular/blob/master/Docs/SchedulerSave.gif?raw=true)
 ### Editing an appointment.
-
+!["Screenshot of Edit: How to edit an appointment"](https://github.com/AmaalAli03/schedular/blob/master/Docs/SchedulerEdit.gif?raw=true)
 ### Save and Delete Error Message.
-
+!["Screenshot of Save and Error Message: How to get an error with appointments"](https://github.com/AmaalAli03/schedular/blob/master/Docs/SchedulerEdit.gif?raw=true)
 
 ## Setup
 
 Install dependencies with `npm install`.
 
+
 ## Dependencies
 
-- babel
+- Normalize
+- Classnames
 - React
 - axios
-- classnames
-- normalize
+- Cypress
+- Jest
+
+
 
 
 ## Development dependencies
