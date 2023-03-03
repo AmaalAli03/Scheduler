@@ -7,7 +7,7 @@ import Status from './Status';
 import Confirm from './Confirm';
 import Error from './Error';
 import "./styles.scss";
-import useVisualMode from 'components/hooks/useVisualMode';
+import useVisualMode from 'hooks/useVisualMode';
 
 
 const Appointment = (props) => {
@@ -90,12 +90,12 @@ const Appointment = (props) => {
       {mode === ERROR_DELETE &&
         <Error
           message="Could not cancel appointment"
-          onClose={back}
+          onClose={()=> transition(SHOW)}
         />}
       {mode === ERROR_SAVE &&
         <Error
           message="Could not save appointment"
-          onClose={back}
+          onClose={()=> transition(SHOW)}
         />}
     </article>
   );

@@ -65,7 +65,7 @@ export default function useApplicationData(props) {
       .then((response) => {
         state.appointments[id].interview = null;
         updateSpots(state.day, state.days, state.appointments);
-        setState({ ...state, appointments: state.appointments, days: state.days });
+        setState({ ...state, appointments, days: state.days });
       });
 
   }
