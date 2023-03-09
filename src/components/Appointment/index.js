@@ -23,6 +23,7 @@ const Appointment = (props) => {
   const { mode, transition, back } = useVisualMode(
     props.interview ? SHOW : EMPTY
   );
+
   function save(name, interviewer) {
     const interview = {
       student: name,
@@ -35,17 +36,18 @@ const Appointment = (props) => {
       .bookInterview(props.id, interview)
       .then(() => transition(SHOW))
       .catch(error => transition(ERROR_SAVE, true));
-  }
+  };
+
   function cancel() {
 
-    transition(DELETING);
+    transition(DELETING,true);
     props.cancelInterview(props.id)
       .then(() => {
         transition(EMPTY);
       })
       .catch(error => transition(ERROR_DELETE, true));
 
-  }
+  };
 
 
 
@@ -90,12 +92,12 @@ const Appointment = (props) => {
       {mode === ERROR_DELETE &&
         <Error
           message="Could not cancel appointment"
-          onClose={()=> transition(SHOW)}
+          onClose={back}
         />}
       {mode === ERROR_SAVE &&
         <Error
           message="Could not save appointment"
-          onClose={()=> transition(SHOW)}
+          onClose={back}
         />}
     </article>
   );
